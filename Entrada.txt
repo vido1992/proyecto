@@ -1,6 +1,19 @@
 #include<stdio.h>
 #include<conio.h>
-//HOLA CHICOS
+//HOLA CHICOS1212 12121
+
+
+-123
+--1
+1.32
+true
+FALSE
+-(-6)
+-1
+
+
+
+
 int main()
 {
 int x[10];
@@ -14,10 +27,15 @@ printf("hola como estas");
 
 }
 
+fro(i=0; i <10; i=i+1)
+{
+
+}
+
+
+
 
 for (i=0; i <10; i=i+1)
-for (j=0; j <10; j=j+1)
-
 if ( x[i] < x[j] )
 {
 a= x[i];
