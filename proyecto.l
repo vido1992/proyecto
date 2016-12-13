@@ -20,12 +20,17 @@ D_Comentario "/*"|"*/"
 
 "if"|"else if"|"else"			fprintf(archSal, "CONDICIONAL ");
 "for"|"while"|"do"			fprintf(archSal, "BUCLE ");
+
+"fi"|"els fi"|"els"			++num;fprintf(archSal, "ERROR ");
+"fro"|"whil"|"do"|wile			++num;fprintf(archSal, "ERROR ");
+
+
 {PalReservada}				fprintf(archSal, "PALAB_RESERVADA ");
 "//"({Letra}|{Espacio}|{Numero}+)*	fprintf(archSal, "COMENTARIO ");
 {Espacio}+	     			fprintf(archSal,"ESPACIO "); 
 \n					++num;fprintf(archSal,"\n");	
 "<"[a-z]+".h>"				fprintf(archSal,"LIBRERIA ");
-{Numero}+|"-"{Numero}			fprintf(archSal, "ENTERO ");
+{Numero}+|"-"{Numero}+			fprintf(archSal, "ENTERO ");
 {Numero}*"."{Numero}+			fprintf(archSal, "FLOTANTE "); 
 "true"|"TRUE"|"false"|"FALSE"		fprintf(archSal, "BOOLEAN ");
 "'".{1}"'"				fprintf(archSal, "CHAR ");
@@ -55,3 +60,4 @@ void main()
     yylex();
     fclose(archSal);
 }
+
